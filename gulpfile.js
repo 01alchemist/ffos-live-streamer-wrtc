@@ -8,13 +8,13 @@ var sequence = require('run-sequence');
 /* config */
 var path = {
     build:'build',
-    push:'/data/local/webapps/system.gaiamobile.org/'
+    push:'/data/local/webapps/system.gaiamobile.org'
 };
 
 var user = username.sync();
 var config = require('./config/'+user+'.json');
 var zipName = 'application.zip';
-var adbPath = config.adb;
+var adbPath = '"'+config.adb+'"';
 
 /* clean */
 gulp.task('clean', function(cb) {
@@ -41,5 +41,5 @@ gulp.task('build', function(cb){
 
 /* watch */
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.js', ['build']);
+    gulp.watch('src/**/*', ['build']);
 });

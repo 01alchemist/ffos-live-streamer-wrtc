@@ -1,6 +1,6 @@
 {
   "wifi": {
-    "enabled": true,
+    "enabled": false,
     "network": "Agent01.de",
     "password": "#00Startrechuz0"
   },
