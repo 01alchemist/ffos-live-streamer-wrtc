@@ -363,6 +363,8 @@ function startWifi(options) {
     wifiManager.onconnectioninfoupdate = function(e) {
       if (e.ipAddress && lastIp !== e.ipAddress) {
         console.log('Wifi now has IP', e.ipAddress);
+        var event = new Event('WIFI_READY');
+        window.dispatchEvent(event);
       }
       lastIp = e.ipAddress;
     };

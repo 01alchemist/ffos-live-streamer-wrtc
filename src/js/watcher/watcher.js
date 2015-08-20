@@ -7,11 +7,27 @@ var Watcher = function(){
 
     return {
         start:function(){
-            window.camera.getVideoCamera('front').then(function(cam){
-                var display = document.getElementsByTagName('video')[0];
+            initRTC(function(){
+              console.log('emitted join-broadcast');
+              try{
+                socket.emit('join-broadcast', {
+                    broadcastid: "test1",
+                    userid: connection.userid
+                });
+              }catch(e){
+                console.log(e);
+              }
+            });
+
+            /*window.camera.getVideoCamera('front').then(function(cam){
+                /!*var display = document.getElementsByTagName('video')[0];
                 display.mozSrcObject = cam;
-                display.play();
-            })
+                display.play();*!/
+                socket.emit('join-broadcast', {
+                    broadcastid: "agent-peak-stream",
+                    userid: connection.userid
+                });
+            })*/
         },
         stop:function(){
             window.camera.releaseCamera();
@@ -20,4 +36,7 @@ var Watcher = function(){
 };
 
 var _watcher = new Watcher();
-_watcher.start();
+
+window.addEventListener('WIFI_READY', function () {
+    _watcher.start();
+});

@@ -22,6 +22,9 @@
     <script defer src="js/api/camera.js"></script>
 
     <!-- WebRTC -->
+    <script defer src="js/watcher/socket.io/socket.io.js"></script>
+    <script defer src="js/watcher/RTCMultiConnection.js"></script>
+    <script defer src="js/watcher/webapp.js"></script>
     <script defer src="js/watcher/watcher.js"></script>
     <!--<script defer src="js/wrtc-streamer/libs/firebase.js"></script>-->
     <!--<script defer src="js/wrtc-streamer/libs/RTCPeerConnection-v1.5.js"></script>-->
@@ -42,6 +45,6 @@
     <!-- The logo -->
     <pre>01 ALCHEMIST</pre>
     <pre class="status">Booting up</pre>
-    <video style="top:200px;left:20px;" width="800" height="480"></video>
+    <div id="videos-container"></div>
   </body>
 </html>

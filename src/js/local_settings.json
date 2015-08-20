@@ -1,8 +1,8 @@
 {
   "wifi": {
-    "enabled": false,
-    "network": "Agent01.de",
-    "password": "#00Startrechuz0"
+    "enabled": true,
+    "network": "AppDev",
+    "password": "AppDev2013"
   },
   "cellular": {
     "roaming": false,

@@ -10,3 +10,9 @@ pre {
   padding: 3vw;
   font-size: calc(100vw / 30);
 }
+video {
+  width: 300px;
+}
+#videos-container{
+  height: 250px
+}
