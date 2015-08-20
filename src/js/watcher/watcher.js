@@ -29,6 +29,17 @@ var Watcher = function(){
                 });
             })*/
         },
+        restart:function(){
+            console.log('emitted join-broadcast');
+            try{
+                socket.emit('join-broadcast', {
+                    broadcastid: "test1",
+                    userid: connection.userid
+                });
+            }catch(e){
+                console.log(e);
+            }
+        },
         stop:function(){
             window.camera.releaseCamera();
         }

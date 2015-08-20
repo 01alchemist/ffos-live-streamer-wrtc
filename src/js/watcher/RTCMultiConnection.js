@@ -3625,7 +3625,11 @@ connection.rtcConfiguration
 
                 log('attaching stream:', stream.streamid, isPluginRTC ? stream : toStr(stream));
 
-                this.connection.addStream(stream);
+                try{
+                    this.connection.addStream(stream);
+                }catch(e){
+                    console.log(e);
+                }
 
                 this.sendStreamId(stream);
                 this.getStreamInfo();
